@@ -13,21 +13,21 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+ -- use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
-  use ({'nvim-treesitter/nvim-treesitter',{ run = ':TSUpdate'}})
+  use ('nvim-treesitter/nvim-treesitter',{ run = ':TSUpdate'})
   use ('nvim-treesitter/playground')
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive')
   use 'bluz71/vim-nightfly-colors'
   use 'vim-test/vim-test'
-  use {
-	  "williamboman/mason.nvim",
-	  "williamboman/mason-lspconfig.nvim",
-	  "neovim/nvim-lspconfig",
-  }
+ --[ use {
+--	  "williamboman/mason.nvim",
+--	  "williamboman/mason-lspconfig.nvim",
+--	  "neovim/nvim-lspconfig",
+ -- }
 
   use {
 	  'nvim-telescope/telescope.nvim' ,
@@ -41,9 +41,38 @@ return require('packer').startup(function(use)
 		  vim.cmd('colorscheme rose-pine')
 	  end
 })
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-compe'
-  use 'hrsh7th/vim-vsnip'
+use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v1.x',
+  requires = {
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},             -- Required
+    {'williamboman/mason.nvim'},           -- Optional
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},         -- Required
+    {'hrsh7th/cmp-nvim-lsp'},     -- Required
+    {'hrsh7th/cmp-buffer'},       -- Optional
+    {'hrsh7th/cmp-path'},         -- Optional
+    {'saadparwaiz1/cmp_luasnip'}, -- Optional
+    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+    -- Snippets
+    {'L3MON4D3/LuaSnip'},             -- Required
+    {'rafamadriz/friendly-snippets'}, -- Optional
+  }
+}
+  --git staff
+  --["lewis6991/gitsigns.nvim"] = {
+    --ft = "gitcommit",
+    --setup = function()
+      --require("core.lazy_load").gitsigns()
+    --end,
+    --config = function()
+      --require("plugins.configs.others").gitsigns()
+    --end,
+  --}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
