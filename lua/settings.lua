@@ -3,6 +3,10 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.autoread = true -- automatically update files if updated elsewhere.
+vim.opt.autochdir = false -- automatically change nvim path to current buffer
+vim.opt.backup = false -- creates a backup file
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -29,3 +33,12 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+vim.opt. listchars = {
+        extends = "◣",
+        lead = "⋅",
+        precedes = "◢",
+        space = "⋅",
+        tab = "» ",
+        trail = "·",
+        -- nbsp = "⋅",
+    }

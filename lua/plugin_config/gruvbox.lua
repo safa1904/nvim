@@ -6,7 +6,5 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0,"NormalFloat", {bg ="none"})--for the background seen through
 
 
-
-
 end
 ColorMyPencils()
