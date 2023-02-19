@@ -13,7 +13,6 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
- -- use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -23,13 +22,7 @@ return require('packer').startup(function(use)
   use ('tpope/vim-fugitive')
   use 'bluz71/vim-nightfly-colors'
   use 'vim-test/vim-test'
-  --commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
   use { "akinsho/toggleterm.nvim"}
- --[ use {
---	  "williamboman/mason.nvim",
---	  "williamboman/mason-lspconfig.nvim",
---	  "neovim/nvim-lspconfig",
- -- }
 
   use {
 	  'nvim-telescope/telescope.nvim' ,
@@ -37,16 +30,9 @@ return require('packer').startup(function(use)
 	  requires ={ {'nvim-lua/plenary.nvim'} }
   }
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
- -- use ({
---	  'gruvbox/neovim',
---	  as = 'gruvbox',
---	  config = function()
---		  vim.cmd('colorscheme gruvbox')
---	  end
---})
-use {
+    use "lunarvim/darkplus.nvim"
+
+ use {
     'goolord/alpha-nvim',
     config = function ()
         require'alpha'.setup(require'alpha.themes.dashboard'.config)
@@ -76,17 +62,7 @@ use {
 }
 -- Git
 	use { "lewis6991/gitsigns.nvim"}
-    --commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
-  --git staff
-  --["lewis6991/gitsigns.nvim"] = {
-    --ft = "gitcommit",
-    --setup = function()
-      --require("core.lazy_load").gitsigns()
-    --end,
-    --config = function()
-      --require("plugins.configs.others").gitsigns()
-    --end,
-  --}
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

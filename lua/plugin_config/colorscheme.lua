@@ -1,3 +1,11 @@
+local colorscheme = "darkplus"
+
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not status_ok then
+  vim.notify("colorscheme " .. colorscheme .. " not found!")
+  return
+end
+
 function ColorMyPencils(color)
 	color = color
 	vim.cmd.colorscheme(color)
@@ -8,10 +16,3 @@ function ColorMyPencils(color)
 
 end
 ColorMyPencils()
-local colorscheme = "darkplus"
-
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
-end
