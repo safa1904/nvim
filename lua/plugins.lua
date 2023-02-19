@@ -12,18 +12,39 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+
+--calling packer
   use 'wbthomason/packer.nvim'
+
+-- planning for debbuging
+  use {
+    "mfussenegger/nvim-dap",
+    "jay-babu/mason-nvim-dap.nvim",
+}
+
+  -- those for tree
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+
+  -- this for lua line 
   use 'nvim-lualine/lualine.nvim'
+
+  -- this for treesitter
   use ('nvim-treesitter/nvim-treesitter',{ run = ':TSUpdate'})
   use ('nvim-treesitter/playground')
+
+  -- for undotree to see your update
   use ('mbbill/undotree')
+
+  -- dont remember what was those for :< 
   use ('tpope/vim-fugitive')
   use 'bluz71/vim-nightfly-colors'
   use 'vim-test/vim-test'
+
+  -- that's for mini terminal
   use { "akinsho/toggleterm.nvim"}
 
+--telescope
   use {
 	  'nvim-telescope/telescope.nvim' ,
 	  tag = '0.1.0' ,
@@ -32,18 +53,20 @@ return require('packer').startup(function(use)
   -- Colorschemes
     use "lunarvim/darkplus.nvim"
 
- use {
-   'goolord/alpha-nvim'
+-- dashboard for some reason is not working
+    use {'goolord/alpha-nvim'}
     --config = function ()
       --  require'alpha'.setup(require'alpha.themes.dashboard'.config)
     --end
-}
-use {
-  'VonHeikemen/lsp-zero.nvim',
-  branch = 'v1.x',
-  requires = {
+
+-- that's the thing come up with packer
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+         branch = 'v1.x',
+         requires = {
     -- LSP Support
     {'neovim/nvim-lspconfig'},             -- Required
+    {'nvim-lua/completion-nvim'},
     {'williamboman/mason.nvim'},           -- Optional
     {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
@@ -62,8 +85,10 @@ use {
 }
 -- Git
 	use { "lewis6991/gitsigns.nvim"}
---presence
-     use {'andweeb/presence.nvim'}
+
+--presence this is not working with WSL2 :(
+     use { 'andweeb/presence.nvim' }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
