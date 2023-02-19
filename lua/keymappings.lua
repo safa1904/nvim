@@ -13,6 +13,8 @@ vim.api.nvim_set_keymap('n', '<C-j>' , '<C-w>j' , { silent = true})
 vim.api.nvim_set_keymap('n', '<C-k>' , '<C-w>k' , { silent = true})
 vim.api.nvim_set_keymap('n', '<C-h>' , '<C-w>h' , { silent = true})
 
+
+
 --better indenting
 vim.api.nvim_set_keymap('v', '<' , '<gv' , { noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '>' , '>gv' , { noremap = true, silent = true})
