@@ -33,10 +33,10 @@ return require('packer').startup(function(use)
     use "lunarvim/darkplus.nvim"
 
  use {
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
+   'goolord/alpha-nvim'
+    --config = function ()
+      --  require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    --end
 }
 use {
   'VonHeikemen/lsp-zero.nvim',
@@ -63,7 +63,7 @@ use {
 -- Git
 	use { "lewis6991/gitsigns.nvim"}
 --presence
-     use 'andweeb/presence.nvim'
+     use {'andweeb/presence.nvim'}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

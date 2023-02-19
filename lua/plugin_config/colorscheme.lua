@@ -7,8 +7,8 @@ if not status_ok then
 end
 
 function ColorMyPencils(color)
-	color = color
-	vim.cmd.colorscheme(color)
+	color = color or 'darkplus'
+	vim.cmd.colorscheme('darkplus')
 
 	vim.api.nvim_set_hl(0,"Normal", {bg ="none"})--for the background seen through
 	vim.api.nvim_set_hl(0,"NormalFloat", {bg ="none"})--for the background seen through
