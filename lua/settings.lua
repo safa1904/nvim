@@ -1,7 +1,14 @@
+-- Relative number toggle, only in insert mode
+vim.api.nvim_command([[
+augroup RelativeNumberToggle
+autocmd InsertEnter * :set relativenumber
+autocmd InsertLeave * :set norelativenumber
+augroup END
+]])
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
+--vim.opt.relativenumber = true
 
 vim.opt.autoread = true -- automatically update files if updated elsewhere.
 vim.opt.autochdir = false -- automatically change nvim path to current buffer
@@ -43,10 +50,3 @@ vim.opt. listchars = {
         -- nbsp = "⋅",
     }
 
--- Relative number toggle, only in Normal mode
-vim.api.nvim_command([[
-augroup RelativeNumberToggle
-autocmd InsertEnter * :set relativenumber
-autocmd InsertLeave * :set norelativenumber
-augroup END
-]])

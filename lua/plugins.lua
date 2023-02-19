@@ -23,6 +23,8 @@ return require('packer').startup(function(use)
   use ('tpope/vim-fugitive')
   use 'bluz71/vim-nightfly-colors'
   use 'vim-test/vim-test'
+  --commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
+  use { "akinsho/toggleterm.nvim"}
  --[ use {
 --	  "williamboman/mason.nvim",
 --	  "williamboman/mason-lspconfig.nvim",
