@@ -1,26 +1,46 @@
-local DEFAULT_SETTINGS = {
-    -- A list of adapters to install if they're not already installed.
-    -- This setting has no relation with the `automatic_installation` setting.
-    ensure_installed = {},
+------------------------------------------------------------------
+vim.fn.sign_define('DapBreakpoint',{ text ='🟥', texthl ='', linehl ='', numhl =''})
+vim.fn.sign_define('DapStopped',{ text ='▶️', texthl ='', linehl ='', numhl =''})
 
-	-- NOTE: this is left here for future porting in case needed
-	-- Whether adapters that are set up (via dap) should be automatically installed if they're not already installed.
-	-- This setting has no relation with the `ensure_installed` setting.
-	-- Can either be:
-	--   - false: Daps are not automatically installed.
-	--   - true: All adapters set up via dap are automatically installed.
-	--   - { exclude: string[] }: All adapters set up via mason-nvim-dap, except the ones provided in the list, are automatically installed.
-	--       Example: automatic_installation = { exclude = { "python", "delve" } }
-    automatic_installation = false,
+vim.keymap.set('n', '<F5>', require 'dap'.continue)
+vim.keymap.set('n', '<F10>', require 'dap'.step_over)
+vim.keymap.set('n', '<F11>', require 'dap'.step_into)
+vim.keymap.set('n', '<F12>', require 'dap'.step_out)
+vim.keymap.set('n', '<leader>b', require 'dap'.toggle_breakpoint)
 
-	-- Whether adapters that are installed in mason should be automatically set up in dap.
-	-- Removes the need to set up dap manually.
-	-- See mappings.adapters and mappings.configurations for settings.
-	-- Must invoke when set to true: `require 'mason-nvim-dap'.setup_handlers()`
-	-- Can either be:
-	-- 	- false: Dap is not automatically configured.
-	-- 	- true: Dap is automatically configured.
-	-- 	- {adapters: {ADAPTER: {}, }, configurations: {configuration: {}, }, filetypes: {filetype: {}, }}. Allows overriding default configuration.
-	-- 	- {adapters: function(default), configurations: function(default), filetypes: function(default), }. Allows modifying the default configuration passed in via function.
-	automatic_setup = false,
-}
+require('dapui').setup()
+require("mason-nvim-dap").setup({
+    ensure_installed = {
+                   "codelldb",
+                    },
+                    automatic_setup = true,
+                })
+    local dap_status_ok, dap = pcall(require, "dap")
+    if not dap_status_ok then
+        return
+    end
+
+    dap.adapters.codelldb = {
+        type = "server",
+        port = "${port}",
+        executable = {
+            command = "codelldb",
+            -- command = "/Users/fen/.vscode/extensions/vadimcn.vscode-lldb-1.7.4/adapter/codelldb",
+            args = { "--port", "${port}" },
+        },
+    }
+
+    dap.configurations.c = {
+        {
+            type = "codelldb",
+            request = "launch",
+            program = function()
+                return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+            end,
+            cwd = "${workspaceFolder}",
+            terminal = "integrated",
+        },
+    }
+
+------------------------------------------------------------------
+

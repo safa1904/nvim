@@ -16,12 +16,6 @@ return require('packer').startup(function(use)
 --calling packer
   use 'wbthomason/packer.nvim'
 
--- planning for debbuging
-  use {
-    "mfussenegger/nvim-dap",
-    "jay-babu/mason-nvim-dap.nvim",
-}
-
   -- those for tree
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
@@ -55,9 +49,6 @@ return require('packer').startup(function(use)
 
 -- dashboard for some reason is not working
     use {'goolord/alpha-nvim'}
-    --config = function ()
-      --  require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    --end
 
 -- that's the thing come up with packer
     use {
@@ -88,6 +79,18 @@ return require('packer').startup(function(use)
 
 --presence this is not working with WSL2 :(
      use { 'andweeb/presence.nvim' }
+
+
+--Debugging
+use {
+  "mfussenegger/nvim-dap",
+  "theHamsta/nvim-dap-virtual-text",
+  "rcarriga/nvim-dap-ui",
+  "nvim-telescope/telescope-dap.nvim",
+  "leoluz/nvim-dap-go",
+  "jay-babu/mason-nvim-dap.nvim",
+  }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
