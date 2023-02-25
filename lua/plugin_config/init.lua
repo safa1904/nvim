@@ -1,0 +1,18 @@
+require('plugin_config.colorscheme')
+require('plugin_config.lualine')
+require('plugin_config.nvim-tree')
+require('plugin_config.treesitter')
+require('plugin_config.telescope')
+require('plugin_config.git')
+require('plugin_config.lsp_config')
+require('plugin_config.undotree')
+require('plugin_config.toggleterm')
+require('plugin_config.presence')
+require('plugin_config.alphafen')
+require('plugin_config.dap')
+require('plugin_config.project')
+require('plugin_config.comment')
+require('plugin_config.bufferline')
+
+-- Which-Key at the bottom
+require('plugin_config.which-key')

@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -94,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
   ["cmp-path"] = {
     loaded = true,
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/cmp-path",
@@ -103,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["completion-nvim"] = {
+    loaded = true,
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/completion-nvim",
+    url = "https://github.com/nvim-lua/completion-nvim"
   },
   ["darkplus.nvim"] = {
     loaded = true,
@@ -119,15 +134,10 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["lspkind.nvim"] = {
+  ["lsp-zero.nvim"] = {
     loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
-    url = "https://github.com/onsails/lspkind.nvim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -139,11 +149,6 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
-  ["mason-null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
-    url = "https://github.com/jayp0521/mason-null-ls.nvim"
-  },
   ["mason-nvim-dap.nvim"] = {
     loaded = true,
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/mason-nvim-dap.nvim",
@@ -153,16 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -204,12 +199,20 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-ts-autotag"] = {
-    load_after = {},
+  ["nvim-treesitter-context"] = {
     loaded = true,
-    needs_bufread = false,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
-    url = "https://github.com/windwp/nvim-ts-autotag"
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -221,6 +224,11 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  playground = {
+    loaded = true,
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -231,15 +239,15 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
   },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
     url = "https://github.com/nvim-telescope/telescope-dap.nvim"
-  },
-  ["telescope-fzf-native.nvim"] = {
-    loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
-    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -251,39 +259,34 @@ _G.packer_plugins = {
     path = "/Users/safa/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["typescript.nvim"] = {
+  undotree = {
     loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/typescript.nvim",
-    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
-  ["vim-ReplaceWithRegister"] = {
+  ["vim-fugitive"] = {
     loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
-    url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-maximizer"] = {
+  ["vim-nightfly-colors"] = {
     loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/vim-maximizer",
-    url = "https://github.com/szw/vim-maximizer"
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/vim-nightfly-colors",
+    url = "https://github.com/bluz71/vim-nightfly-colors"
   },
-  ["vim-surround"] = {
+  ["vim-test"] = {
     loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
   },
-  ["vim-tmux-navigator"] = {
+  ["which-key.nvim"] = {
     loaded = true,
-    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
-    url = "https://github.com/christoomey/vim-tmux-navigator"
+    path = "/Users/safa/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-ts-autotag ]]
-time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
