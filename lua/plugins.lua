@@ -105,7 +105,8 @@ return require('packer').startup(function(use)
         "leoluz/nvim-dap-go",
         "jay-babu/mason-nvim-dap.nvim",
     }
-
+    -- for spaces checks
+	use "lukas-reineke/indent-blankline.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

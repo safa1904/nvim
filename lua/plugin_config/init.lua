@@ -13,6 +13,7 @@ require('plugin_config.dap')
 require('plugin_config.project')
 require('plugin_config.comment')
 require('plugin_config.bufferline')
+require('plugin_config.blankline')
 
 -- Which-Key at the bottom
 require('plugin_config.which-key')

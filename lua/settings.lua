@@ -49,4 +49,6 @@ vim.opt. listchars = {
         trail = "·",
         -- nbsp = "⋅",
     }
+vim.cmd[[autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0]]
+vim.opt.clipboard = ({ "unnamedplus", "unnamed" }) -- allows neovim to access the system clipboard
 
