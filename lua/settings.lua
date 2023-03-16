@@ -51,4 +51,15 @@ vim.opt. listchars = {
     }
 vim.cmd[[autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0]]
 vim.opt.clipboard = ({ "unnamedplus", "unnamed" }) -- allows neovim to access the system clipboard
+local options = {
+    autoread = true, -- automatically update files if updated elsewhere.
+    autochdir = false, -- automatically change nvim path to current buffer
+    backup = false, -- creates a backup file
+    clipboard = { "unnamedplus", "unnamed" }, -- allows neovim to access the system clipboard
+}
+
+-- Now enable the options
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
 

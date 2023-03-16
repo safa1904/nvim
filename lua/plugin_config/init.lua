@@ -14,6 +14,9 @@ require('plugin_config.project')
 require('plugin_config.comment')
 require('plugin_config.bufferline')
 require('plugin_config.blankline')
+require('plugin_config.autopairs')
+require('plugin_config.null')
 
 -- Which-Key at the bottom
 require('plugin_config.which-key')
+

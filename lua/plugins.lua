@@ -59,6 +59,10 @@ return require('packer').startup(function(use)
     -- dashboard for some reason is not working
     use 'goolord/alpha-nvim'
 
+    -- auto closing
+ 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+ 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+
     -- that's the thing come up with packer
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -95,6 +99,10 @@ return require('packer').startup(function(use)
     -- Which-Key
     use("folke/which-key.nvim")
 
+
+    -- formatting & linting
+ 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+ 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
     --Debugging
     use {
