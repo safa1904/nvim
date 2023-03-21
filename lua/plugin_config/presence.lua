@@ -8,7 +8,7 @@ require("presence"):setup({
   debounce_timeout = 10,
   enable_line_number = false,
   blacklist = {},
-  buttons = true,-- this is for github repo
+  buttons = false,-- this is for github repo
   file_assets = {},
 
   -- Rich Presence text options

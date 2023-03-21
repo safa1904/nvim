@@ -1,3 +1,6 @@
 lua/uoo
 lua/plugin_config/options.lua
+lua/plugin_config/debugger.lua
+lua/nv-compe
+
 .DS_Store
