@@ -1,4 +1,6 @@
 local M = {
+	--"bluz71/vim-nightfly-colors",
+	--name = "nightfly",
 	"lunarvim/darkplus.nvim",
 	lazy = false,
 	priority = 1000,
