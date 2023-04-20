@@ -42,8 +42,8 @@ function M.config()
 	local marginTopPercent = 0.05
 	local headerPadding = fn.max({ 2, fn.floor(fn.winheight(0) * marginTopPercent) })
 
-	local icons = require("safanvim.icons")
-	local daylight = require("safanvim.functions").daylight()
+	local icons = require("utils.icons")
+	local daylight = require("utils.functions").daylight()
 	if daylight then
 		header_hl_group = "String"
 	else
