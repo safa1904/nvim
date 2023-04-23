@@ -15,54 +15,54 @@ return require("packer").startup(function(use)
 	--calling packer
 	use("wbthomason/packer.nvim")
 
-	-- those for tree
+	-- those for tree---> done
 	use("nvim-tree/nvim-tree.lua")
 	use("nvim-tree/nvim-web-devicons")
 
-	-- this for lua line
+	-- this for lua line--> done
 	use("nvim-lualine/lualine.nvim")
 
-	-- Bufferline
+	-- Bufferline---> done
 	use("akinsho/bufferline.nvim")
 
-	-- this for treesitter
+	-- this for treesitter-->done
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("p00f/nvim-ts-rainbow")
 	use("nvim-treesitter/playground")
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
-	-- for undotree to see your update
+	-- for undotree to see your update--> done
 	use("mbbill/undotree")
 
-	-- dont remember what was those for :<
+	-- dont remember what was those for :< --> not yet
 	use("tpope/vim-fugitive")
 	use("bluz71/vim-nightfly-colors")
 	use("vim-test/vim-test")
 
-	-- that's for mini terminal
+	-- that's for mini terminal---> done
 	use({ "akinsho/toggleterm.nvim" })
 
-	--telescope
+	--telescope--> done
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	-- Colorschemes
+	-- Colorschemes --> done
 	use("lunarvim/darkplus.nvim")
 
-	-- Comment
+	-- Comment--> done
 	use("numToStr/Comment.nvim") -- Comment anywhere anything
 
-	-- dashboard for some reason is not working
+	-- dashboard for some reason is not working--> not yet
 	use("goolord/alpha-nvim")
 
-	-- auto closing
+	-- auto closing--> half
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-	-- that's the thing come up with packer
+	-- that's the thing come up with packer---> not yet
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
@@ -86,23 +86,23 @@ return require("packer").startup(function(use)
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	})
-	-- Git
+	-- Git--> done
 	use({ "lewis6991/gitsigns.nvim" })
 
-	--presence this is not working with WSL2 :(
+	--presence this is not working with WSL2 :(---> done
 	use({ "andweeb/presence.nvim" })
 
-	-- Project Directory AutoMove
+	-- Project Directory AutoMove--->done
 	use("ahmedkhalf/project.nvim")
 
-	-- Which-Key
+	-- Which-Key--> done
 	use("folke/which-key.nvim")
 
-	-- formatting & linting
+	-- formatting & linting---> done
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
-	--Debugging
+	--Debugging--> done
 	use({
 		"mfussenegger/nvim-dap",
 		"theHamsta/nvim-dap-virtual-text",
@@ -111,7 +111,7 @@ return require("packer").startup(function(use)
 		"leoluz/nvim-dap-go",
 		"jay-babu/mason-nvim-dap.nvim",
 	})
-	-- for spaces checks
+	-- for spaces checks--> done
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
@@ -120,4 +120,3 @@ return require("packer").startup(function(use)
 		require("packer").sync()
 	end
 end)
-
