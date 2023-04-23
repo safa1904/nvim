@@ -45,7 +45,7 @@ function M.config()
 	local icons = require("utils.icons")
 	local daylight = require("utils.functions").daylight()
 	if daylight then
-		header_hl_group = "String"
+		header_hl_group = "string"
 	else
 		header_hl_group = "TSLabel" -- deep blue
 		-- header_hl_group = "Error" -- RED
@@ -84,10 +84,6 @@ function M.config()
 			[['--'.     ;  :   .'   |  : \;  :   .'   \ \   \ ;  :    |   ;/           ]],
 			[[ `--'---'|  ,     .-.|  |,'|  ,     .-./  '---"|  ,   /'---'            ]],
 			[[          `--`---'   `--'   `--`---'            ---`-']],
-			-- [[   ____       _   ___     ]],
-			-- [[  / __/__ ___| | / (_)_ _ ]],
-			-- [[ / _// -_) _ \ |/ / /  ' \]],
-			-- [[/_/  \__/_//_/___/_/_/_/_/]],
 		}
 		if width > 88 and height > 36 and not daylight then
 			val = {
@@ -219,19 +215,10 @@ function M.config()
 				button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert <CR>"),
 				button("r", icons.ui.History .. " Recent Files", ":Telescope oldfiles <CR>"),
 				button("f", icons.documents.Files .. " Find Files", ":Telescope find_files <CR>"),
-				button("r", icons.misc.Repo .. " Search Repositories", ":cd ~/repo<CR> :Telescope find_files <CR>"),
-				button("s", icons.ui.SignIn .. " Find Session", ":SearchSession<CR>"),
-				button("t", icons.ui.List .. " Todo List", ":TodoTelescope<CR>"),
-				-- button("SPC f t", icons.type.String .. " Find Text", ":Telescope live_grep <CR>"),
 				button("c", icons.ui.Gear .. " Configuration", ":e $MYVIMRC | :cd %:p:h <CR>"),
-				button("u", icons.ui.CloudDownload .. " Update", ":PackerSync<CR>"),
+				button("u", icons.ui.CloudDownload .. " Update", ":Lazy update<CR>"),
 				button("q", icons.ui.SignOut .. " Quit", ":qa<CR>"),
-				-- button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
-				-- button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-				-- button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
-				-- button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
-				-- button("SPC t h", "  Themes  ", ":Telescope themes<CR>"),
-			},
+            },
 			opts = {
 				spacing = 1,
 			},

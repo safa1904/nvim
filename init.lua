@@ -1,8 +1,3 @@
--- require("plugins")
--- require("keymappings")
--- require("plugin_config")
--- require("settings")
-
 ----------------------------------------------[[ Bootstrap Lazy ]]
 
 require("lazy_bootstrap") -- bootstraps folke/lazy
