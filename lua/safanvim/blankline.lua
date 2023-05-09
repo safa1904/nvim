@@ -32,6 +32,7 @@ function M.config()
 			"trouble",
 			"alpha",
 			"nvimtree",
+                        "dashboard",
 		},
 	})
 end

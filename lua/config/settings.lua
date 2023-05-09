@@ -7,7 +7,7 @@ augroup END
 ]])
 vim.opt.guicursor = ""
 
-vim.opt.nu = true
+vim.opt.number = true
 --vim.opt.relativenumber = true
 
 vim.opt.autoread = true -- automatically update files if updated elsewhere.
