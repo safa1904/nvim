@@ -6,7 +6,7 @@ autocmd InsertLeave * :set norelativenumber
 augroup END
 ]])
 vim.opt.guicursor = ""
-
+--vim.notify = require("notify")
 vim.opt.number = true
 --vim.opt.relativenumber = true
 
