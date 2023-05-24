@@ -8,20 +8,23 @@ augroup END
 vim.opt.guicursor = ""
 --vim.notify = require("notify")
 vim.opt.number = true
---vim.opt.relativenumber = true
 
 vim.opt.autoread = true -- automatically update files if updated elsewhere.
 vim.opt.autochdir = false -- automatically change nvim path to current buffer
 vim.opt.backup = false -- creates a backup file
 
+vim.opt.autoindent = true
+vim.opt.ai = true--autoindent 
 vim.opt.tabstop = 8
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.opt.termguicolors = true
+
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = false --no raps line
 
 vim.opt.swapfile = false
 vim.opt.backup = false

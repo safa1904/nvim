@@ -207,9 +207,9 @@ function M.config()
 
     local dynamic_header_gif = {
         type = "terminal",
-        command = "chafa -c full --fg-only --symbols braille ~/Downloads/d.gif",
-        width = 20,
-        height = 15,
+        command = "chafa -c full --fg-only --symbols braille ~/Documents/Photo:gif//db.gif",
+        width = 40,
+        height = 10,
         opts = {
             position = "center",
             redraw = true,
@@ -281,9 +281,8 @@ function M.config()
         end
         return greetingsTable[greetingIndex] .. ", " .. name
     end
-
-    -- vim.notify = require("notify")(getGreeting("Saphia"), "info",
-    --         {title = "Greetings", stages = "slide", render = "minimal"})
+   vim.notify = require("notify")(getGreeting("Saphia"), "info",
+           {title = "Greetings", stages = "slide", render = "minimal"})
 
     alpha.setup({
         layout = {

@@ -3,8 +3,6 @@ return {
     { "RaafatTurki/hex.nvim", event = "VeryLazy", config = true, },
     --undotree
     "mbbill/undotree",
-    --notify
-    { 'rcarriga/nvim-notify', event = "VimEnter", config = true, enabled = false },
     {
         "iamcco/markdown-preview.nvim",
         build = function()

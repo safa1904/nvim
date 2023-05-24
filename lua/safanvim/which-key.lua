@@ -107,30 +107,23 @@ function M.config()
 		q = { '<cmd>lua require("utils.functions").smart_quit()<CR>', "Quit" },
 		["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
 		v = { "<cmd>vsplit<cr>", "vsplit" },
-		b = {
+
+
+		b =
+                {
 			name = "Buffers",
-			j = { "<cmd>BufferLinePick<cr>", "Jump" },
-			f = { "<cmd>Telescope buffers<cr>", "Find" },
-			b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-			n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+
 			-- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
-			e = {
-				"<cmd>BufferLinePickClose<cr>",
-				"Pick which buffer to close",
-			},
-			h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-			l = {
-				"<cmd>BufferLineCloseRight<cr>",
-				"Close all to the right",
-			},
-			D = {
-				"<cmd>BufferLineSortByDirectory<cr>",
-				"Sort by directory",
-			},
-			L = {
-				"<cmd>BufferLineSortByExtension<cr>",
-				"Sort by language",
-			},
+                        a = { "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>", "Close All Other Buffers" },
+			D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory", },
+			L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language", },
+			b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+			e = {"<cmd>BufferLinePickClose<cr>","Pick which buffer to close",},
+			f = { "<cmd>Telescope buffers<cr>", "Find" },
+			j = { "<cmd>BufferLinePick<cr>", "Jump" },
+			l = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+			n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+			r = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right", },
 		},
 
 		n = {
@@ -323,7 +316,7 @@ function M.config()
 			s = { "<cmd>lua _SPT_TOGGLE()<cr>", "Spotify-TUI" },
 			f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 			--h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-			t = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+			h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 			v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		},
 

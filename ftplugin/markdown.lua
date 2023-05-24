@@ -13,7 +13,7 @@ local opts = {
 }
 vim.cmd("setlocal shiftwidth=2")
 vim.cmd("setlocal tabstop=2")
-vim.cmd("setlocal tw=80")
+vim.cmd("setlocal tw=90")
 vim.cmd("setlocal spell")
 
 local mappings = {
