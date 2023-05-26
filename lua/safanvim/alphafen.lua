@@ -281,8 +281,8 @@ function M.config()
         end
         return greetingsTable[greetingIndex] .. ", " .. name
     end
-   vim.notify = require("notify")(getGreeting("Saphia"), "info",
-           {title = "Greetings", stages = "slide", render = "minimal"})
+   -- vim.notify = require("notify")(getGreeting("Saphia"), "info",
+   --         {title = "Greetings", stages = "slide", render = "minimal"})
 
     alpha.setup({
         layout = {
