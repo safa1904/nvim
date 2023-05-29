@@ -19,7 +19,7 @@ vim.opt.tabstop = 8
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-
+vim.diagnostic.hide() 
 vim.opt.termguicolors = true
 
 vim.opt.smartindent = true

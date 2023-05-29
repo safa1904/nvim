@@ -1,5 +1,6 @@
 local M = {
     "VonHeikemen/lsp-zero.nvim",
+
     branch = "v1.x",
     dependencies = {
         -- LSP Support
@@ -19,15 +20,37 @@ local M = {
         -- Snippets
         { "L3MON4D3/LuaSnip" },             -- Required
         { "rafamadriz/friendly-snippets" }, -- Optional
-    },
+        --lsp_lines for error wrap
+        {"https://github.com/ErichDonGubler/lsp_lines.nvim"},
+            },
 }
+
 function M.config()
+     vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = true,
+})
+
     local lsp = require("lsp-zero").preset({
         name = "minimal",
         set_lsp_keymaps = false,
         manage_nvim_cmp = true,
         suggest_lsp_servers = false,
+        set_lsp_sideline = false,
+        --[[ setq lsp-ui-sideline-enable nil, ]]
+
     })
+     local lsp_lines = require("lsp_lines").setup()
+        --[[ vim.diagnostic.enable() ]]
+--     -- Disable virtual_text since it's redundant due to lsp_lines.
+-- vim.diagnostic.config({
+--   virtual_text = false,
+-- })
+
+
 
     -- (Optional) Configure lua language server for neovim
     lsp.nvim_workspace()
