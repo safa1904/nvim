@@ -8,6 +8,7 @@ function M.config()
         return
     end
 
+
     local funcs = require("utils.functions")
     local daylight = funcs.daylight() -- check timei
      local function day_icon_max()
