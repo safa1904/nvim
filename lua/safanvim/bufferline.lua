@@ -6,6 +6,7 @@ local M = {
 	-- Keeps buffers and tabs scoped/separate
 	dependencies = { "tiagovla/scope.nvim", config = true },
 }
+
 function M.config()
 	local status_ok, bufferline = pcall(require, "bufferline")
 	if not status_ok then
