@@ -8,6 +8,7 @@ require("config") -- loads lua/user/init.lua
 
 ----------------------------------------------[[  Load Plugins  ]]
 
+
 require("lazy").setup("safanvim", {
 	checker = { enabled = false },
 	diff = { cmd = "diffview.nvim" },

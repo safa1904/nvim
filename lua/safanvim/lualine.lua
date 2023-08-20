@@ -44,7 +44,7 @@ function M.config()
         return "%#" .. hl .. "#" .. str .. "%*"
     end
 
-    -- check if value in table
+        -- check if value in table
     local function contains(t, value)
         for _, v in pairs(t) do
             if v == value then
@@ -53,7 +53,7 @@ function M.config()
         end
         return false
     end
-
+    
     ---------------- Sections-----------------
     -- Change mode string
     --[[ Mode Icons: 󰉊    盛滛            ]]
@@ -199,6 +199,17 @@ function M.config()
             funcs.open_explorer()
         end,
     }
+    local runner = {
+        "runner",
+        fmt = function()
+            return "  RUN "
+        end,
+        padding = 0,
+        on_click = function()
+            vim.cmd("RunCode")
+        end,
+    }
+
 
     ---------------------------------------------------------------------------
     ---------------------------------------------------------[[ Mixed Indent ]]
@@ -334,11 +345,11 @@ function M.config()
             lualine_b = { branch, diff },
             lualine_c = { diagnostics },
             lualine_x = {
-             filename, --[[ filetype, ]] 
+             filename, --[[ filetype, ]]
                 encoding,
                 fileformat,
             },
-            lualine_y = { wordcount, mixed_indent, spaces, location, progress },
+            lualine_y = { wordcount, mixed_indent, spaces, location, progress,runner },
             lualine_z = { { clock } },
         },
 
