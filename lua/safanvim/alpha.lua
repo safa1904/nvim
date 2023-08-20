@@ -43,6 +43,8 @@ function M.config()
         }
     end
 
+
+
     -- dynamic header padding
     local fn = vim.fn
     local marginTopPercent = 0.05
