@@ -1,3 +1,4 @@
+--purpose: is to make windows on nvim.
 local M = {
 	"akinsho/bufferline.nvim",
         commit = "eb4e95b", -- this prevents updating

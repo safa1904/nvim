@@ -1,3 +1,4 @@
+-- purpose: for colorscheme
 local M = {
     "lunarvim/darkplus.nvim",
     lazy = false,

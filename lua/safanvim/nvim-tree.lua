@@ -45,7 +45,23 @@ function M.config()
 		git = {
 			ignore = true,
 		},
+	disable_netrw = false,
+    hijack_netrw = true,
+    respect_buf_cwd = true,
+    view = {
+      number = false,
+      relativenumber = false,
+    },
+    filters = {
+      custom = { ".git" },
+    },
+    sync_root_with_cwd = true,
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+    },
 	})
+         
 
 	vim.keymap.set("n", "<Leader>e", ":NvimTreeFindFileToggle<CR>")
 end
