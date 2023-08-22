@@ -14,8 +14,11 @@ function M.config()
     vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
     nvimtree.setup({
     disable_netrw = false,
+    hijack_directories = {
+    enable = true,
+  },
 	view = {
-      width = 30,
+      width = 30,--window size
     },
     filters = {
       custom = { ".git" },
@@ -51,6 +54,7 @@ function M.config()
     },
 	
   })
+  vim.notify = require("notify")
 
 	vim.keymap.set("n", "<Leader>e", ":NvimTreeFindFileToggle<CR>")
 end

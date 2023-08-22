@@ -87,6 +87,7 @@ M.on_attach = function(client, bufnr)
 		return
 	end
 	illuminate.on_attach(client)
+        --[[ vim.notify=require("notify") ]]
 end
 
 return M

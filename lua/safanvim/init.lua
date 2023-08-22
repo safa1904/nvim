@@ -18,11 +18,7 @@ return {
             "jose-elias-alvarez/null-ls.nvim",
         },
         config = function()
-            require("safanvim.lsp.null").config() -- require your null-ls config 
-            --here (example below)
+            require("safanvim.lsp.null").config()
         end,
-    }
-
-
-
+    },
 }

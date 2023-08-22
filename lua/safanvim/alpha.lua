@@ -1,9 +1,7 @@
---purpose of this file : is to show the dashbord whenever you open neovim.
-
 local M = {
     "goolord/alpha-nvim",
     event = 'VimEnter',
-    dependencies = { {'rcarriga/nvim-notify'}}
+    --dependencies = { {'rcarriga/nvim-notify'}}
 }
 
 function M.config()
@@ -13,9 +11,12 @@ function M.config()
         return
     end
 
+    -- d t g
     local function button(sc, txt, keybind)
         local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
 
+        -- delete inside {
+        -- d i {
         local opts = {
             position = "center",
             text = txt,
@@ -58,21 +59,21 @@ function M.config()
         -- header_hl_group = "Error" -- RED
     end
 
-    local function dynamic_header()
+    local function dynamic_header() --TODO: Tweak this and fix the height/width conditions later.
         local uis = vim.api.nvim_list_uis()[1]
         local height = uis.height
         local width = uis.width
-        local val = {
+        local val = { --Defaults
 
-[[  /$$$$$$             /$$$$$$         /$$              /$$   /$$                                /$$              ]],
-[[ /$$__  $$           /$$__  $$       | $/             | $$$ | $$                               |__/              ]],
-[[| $$  \__/  /$$$$$$ | $$  \__//$$$$$$|_//$$$$$$$      | $$$$| $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$ /$$$$$$/$$$$ ]],
-[[|  $$$$$$  |____  $$| $$$$   |____  $$ /$$_____/      | $$ $$ $$ /$$__  $$ /$$__  $$|  $$  /$$/| $$| $$_  $$_  $$]],
-[[ \____  $$  /$$$$$$$| $$_/    /$$$$$$$|  $$$$$$       | $$  $$$$| $$$$$$$$| $$  \ $$ \  $$/$$/ | $$| $$ \ $$ \ $$]],
-[[ /$$  \ $$ /$$__  $$| $$     /$$__  $$ \____  $$      | $$\  $$$| $$_____/| $$  | $$  \  $$$/  | $$| $$ | $$ | $$]],
-[[|  $$$$$$/|  $$$$$$$| $$    |  $$$$$$$ /$$$$$$$/      | $$ \  $$|  $$$$$$$|  $$$$$$/   \  $/   | $$| $$ | $$ | $$]],
-[[ \______/  \_______/|__/     \_______/|_______/       |__/  \__/ \_______/ \______/     \_/    |__/|__/ |__/ |__/]],
-}
+            [[  /$$$$$$             /$$$$$$         /$$              /$$   /$$                                /$$              ]],
+            [[ /$$__  $$           /$$__  $$       | $/             | $$$ | $$                               |__/              ]],
+            [[| $$  \__/  /$$$$$$ | $$  \__//$$$$$$|_//$$$$$$$      | $$$$| $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$ /$$$$$$/$$$$ ]],
+            [[|  $$$$$$  |____  $$| $$$$   |____  $$ /$$_____/      | $$ $$ $$ /$$__  $$ /$$__  $$|  $$  /$$/| $$| $$_  $$_  $$]],
+            [[ \____  $$  /$$$$$$$| $$_/    /$$$$$$$|  $$$$$$       | $$  $$$$| $$$$$$$$| $$  \ $$ \  $$/$$/ | $$| $$ \ $$ \ $$]],
+            [[ /$$  \ $$ /$$__  $$| $$     /$$__  $$ \____  $$      | $$\  $$$| $$_____/| $$  | $$  \  $$$/  | $$| $$ | $$ | $$]],
+            [[|  $$$$$$/|  $$$$$$$| $$    |  $$$$$$$ /$$$$$$$/      | $$ \  $$|  $$$$$$$|  $$$$$$/   \  $/   | $$| $$ | $$ | $$]],
+            [[ \______/  \_______/|__/     \_______/|_______/       |__/  \__/ \_______/ \______/     \_/    |__/|__/ |__/ |__/]],
+        }
 
 
 
@@ -130,6 +131,7 @@ function M.config()
         headerPaddingBottom = { type = "padding", val = 2 },
     }
 
+    --options = require("user.functions").load_override(options, "goolord/alpha-nvim")
 
     local function getGreeting(name)
         local tableTime = os.date("*t")
