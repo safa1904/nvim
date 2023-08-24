@@ -16,6 +16,7 @@ M.tools = {
     "shellcheck",
     "shfmt",
     "stylua"
+   -- "jdtls"
 }
 
 function M.check()
@@ -55,7 +56,7 @@ function M.config()
             "lua_ls",
             "tsserver",
             "pyright",
-            "yamlls",
+            "yamlls"
         },
         automatic_installation = true,
     })
@@ -92,6 +93,13 @@ function M.config()
             local jsonls_opts_ext = vim.tbl_deep_extend("force", jsonls_opts, opts)
             require("lspconfig").jsonls.setup(jsonls_opts_ext)
         end,
+
+        --  ["jdtls"] = function()
+        --     local jdtls_opts = require("safanvim.lsp.settings.java")
+        --     local jdtls_opts_ext = vim.tbl_deep_extend("force", jdtls_opts, opts)
+        --     require("lspconfig").jdtls.setup(jdtls_opts_ext)
+        -- end,
+
 
         ["omnisharp"] = function()
             local omnisharp_opts = require("safanvim.lsp.settings.omnisharp")
