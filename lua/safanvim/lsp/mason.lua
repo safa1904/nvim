@@ -4,7 +4,6 @@ M.tools = {
     "black",
     "clang-format",
     "codelldb",
-    "pyright",
     "debugpy",
     "eslint_d",
     "flake8",
@@ -15,8 +14,7 @@ M.tools = {
     "selene",
     "shellcheck",
     "shfmt",
-    "stylua"
-   -- "jdtls"
+    "stylua",
 }
 
 function M.check()
@@ -55,8 +53,7 @@ function M.config()
             "rust_analyzer",
             "lua_ls",
             "tsserver",
-            "pyright",
-            "yamlls"
+            "yamlls",
         },
         automatic_installation = true,
     })
@@ -67,6 +64,11 @@ function M.config()
         -- a dedicated handler.
         function(server_name) -- default handler (optional)
             require("lspconfig")[server_name].setup(opts)
+        end,
+
+        ["jdtls"] = function()
+        --     local java_opts = require("fenvim.lsp.settings.java")
+        --     require("jdtls").start_or_attach(java_opts)
         end,
 
         ["rust_analyzer"] = function()
@@ -93,13 +95,6 @@ function M.config()
             local jsonls_opts_ext = vim.tbl_deep_extend("force", jsonls_opts, opts)
             require("lspconfig").jsonls.setup(jsonls_opts_ext)
         end,
-
-        --  ["jdtls"] = function()
-        --     local jdtls_opts = require("safanvim.lsp.settings.java")
-        --     local jdtls_opts_ext = vim.tbl_deep_extend("force", jdtls_opts, opts)
-        --     require("lspconfig").jdtls.setup(jdtls_opts_ext)
-        -- end,
-
 
         ["omnisharp"] = function()
             local omnisharp_opts = require("safanvim.lsp.settings.omnisharp")

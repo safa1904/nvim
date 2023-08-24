@@ -7,4 +7,5 @@ local config = {
         signatureHelp = { enabled = true },
     } },
 }
-require("jdtls").start_or_attach(config)
+
+return config
