@@ -204,7 +204,7 @@ function M.config()
     local runner = {
         "runner",
         fmt = function()
-            return "  RUN "
+            return "  "
         end,
         padding = 0,
         on_click = function()
