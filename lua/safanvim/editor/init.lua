@@ -1,8 +1,3 @@
-local using_neovide = false
-if vim.g.neovide then
-    using_neovide = true
-end
-
 return {
     {
         -- Auto bracket pairs
@@ -74,31 +69,7 @@ return {
             require("safanvim.editor.jaq").config()
         end,
     },
-    -- {
-    --     "folke/todo-comments.nvim",
-    --     event = "BufReadPost",
-    --     cmd = { "TodoTrouble", "TodoTelescope" },
-    --     keys = {
-    --         {
-    --             "]t",
-    --             function()
-    --                 require("todo-comments").jump_next()
-    --             end,
-    --             desc = "Next todo comment",
-    --         },
-    --         {
-    --             "[t",
-    --             function()
-    --                 require("todo-comments").jump_prev()
-    --             end,
-    --             desc = "Previous todo comment",
-    --         },
-    --     },
-    --     config = function()
-    --         require("safanvim.editor.todo-comments").config()
-    --     end,
-    -- },
-    {
+       {
         "gaoDean/autolist.nvim",
         ft = {
             "markdown",

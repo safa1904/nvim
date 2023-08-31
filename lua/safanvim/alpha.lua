@@ -1,7 +1,6 @@
 local M = {
     "goolord/alpha-nvim",
     event = 'VimEnter',
-    --dependencies = { {'rcarriga/nvim-notify'}}
 }
 
 function M.config()
@@ -11,12 +10,9 @@ function M.config()
         return
     end
 
-    -- d t g
     local function button(sc, txt, keybind)
         local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
 
-        -- delete inside {
-        -- d i {
         local opts = {
             position = "center",
             text = txt,
@@ -60,9 +56,7 @@ function M.config()
     end
 
     local function dynamic_header() --TODO: Tweak this and fix the height/width conditions later.
-        local uis = vim.api.nvim_list_uis()[1]
-        local height = uis.height
-        local width = uis.width
+        --local uis = vim.api.nvim_list_uis()[1]
         local val = { --Defaults
 
             [[  /$$$$$$             /$$$$$$         /$$              /$$   /$$                                /$$              ]],
@@ -80,18 +74,6 @@ function M.config()
         return val
     end
     require("alpha.term")
-
-    -- local dynamic_header_gif = {
-    --     type = "terminal",
-    --     command = "chafa -c full --fg-only --symbols braille ~/Documents/Photo:gif//db.gif",
-    --     width = 40,
-    --     height = 10,
-    --     opts = {
-    --         position = "center",
-    --         redraw = true,
-    --         window_config = {},
-    --     },
-   -- }
 
     local dynamic_header_responsive = {
         type = "text",
@@ -130,8 +112,6 @@ function M.config()
         headerPaddingTop = { type = "padding", val = headerPadding },
         headerPaddingBottom = { type = "padding", val = 2 },
     }
-
-    --options = require("user.functions").load_override(options, "goolord/alpha-nvim")
 
     local function getGreeting(name)
         local tableTime = os.date("*t")

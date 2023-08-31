@@ -1,6 +1,5 @@
 local M = {
 	"windwp/nvim-autopairs",
-	--dependice =  "windwp/nvim-ts-autotag", after = "nvim-treesitter"
 }
 function M.config()
 	-- import nvim-autopairs safely
