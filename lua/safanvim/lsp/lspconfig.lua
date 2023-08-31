@@ -5,7 +5,7 @@ function M.config()
         return
     end
 
-    -- Change LSPInfo border to rounded
+   -- Change LSPInfo border to rounded
     require("lspconfig.ui.windows").default_options.border = require("core.prefs").ui.border_style
 
     M.server_capabilities = function()

@@ -1,5 +1,4 @@
 local M = {}
-
 M.tools = {
     "black",
     "clang-format",

@@ -18,16 +18,16 @@ return {
             require("safanvim.lsp.lspconfig").config()
         end,
     },
-    -- },
-    -- { this one bellow is for wraping the default error from lsp
-    --     "Maan2003/lsp_lines.nvim",
-    --     event = "BufReadPre",
-    --     opts = {
-    --         text = {
-    --             done = "✔",
-    --         },
-    --     },
-    -- },
+    
+    {-- this one bellow is for wraping the default error from lsp
+        "Maan2003/lsp_lines.nvim",
+        event = "BufReadPre",
+        opts = {
+            text = {
+                done = "✔",
+            },
+        },
+    },
     {
         "williamboman/mason.nvim",
         dependencies = {
@@ -47,5 +47,4 @@ return {
             require("safanvim.lsp.null").config()
         end,
     },
-
 }
