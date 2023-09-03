@@ -55,8 +55,7 @@ function M.config()
         -- header_hl_group = "Error" -- RED
     end
 
-    local function dynamic_header() --TODO: Tweak this and fix the height/width conditions later.
-        --local uis = vim.api.nvim_list_uis()[1]
+    local function dynamic_header()
         local val = { --Defaults
 
             [[  /$$$$$$             /$$$$$$         /$$              /$$   /$$                                /$$              ]],
@@ -101,12 +100,13 @@ function M.config()
             },
             opts = {
                 spacing = 1,
-            },
+                type ="text",
+                            },
         },
         footer = {
             type = "text",
-            val = require("alpha.fortune")(),
-            opts = { hl = "Comment", position = "center" },
+            val = "DO NOT UPDATE",
+            opts = { hl = "error", position = "center" },
         },
 
         headerPaddingTop = { type = "padding", val = headerPadding },
