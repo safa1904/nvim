@@ -105,7 +105,9 @@ function M.config()
         },
         footer = {
             type = "text",
-            val = "DO NOT UPDATE",
+            val = "Do NOT UPDATE"..require("alpha.fortune")(),
+           -- va = "DO NOT UPDATE"..val,
+            --opts = { hl = "Comment", position = "center" },
             opts = { hl = "error", position = "center" },
         },
 
