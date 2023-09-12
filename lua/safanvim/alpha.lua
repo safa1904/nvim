@@ -105,10 +105,9 @@ function M.config()
         },
         footer = {
             type = "text",
-            val = "Do NOT UPDATE"..require("alpha.fortune")(),
-           -- va = "DO NOT UPDATE"..val,
-            --opts = { hl = "Comment", position = "center" },
-            opts = { hl = "error", position = "center" },
+            --val = "Do NOT UPDATE"..require("alpha.fortune")(),
+           val = "DO NOT UPDATE",
+           opts = { hl = "error", position = "center" },
         },
 
         headerPaddingTop = { type = "padding", val = headerPadding },
