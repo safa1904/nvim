@@ -1,0 +1,11 @@
+-- local M = {
+--     "github/copilot.vim"
+-- }
+-- function M.config()
+--     local setup,copilot = pcall(require,"copilot")
+--     if not setup then
+--         return
+--     end
+--     
+-- end
+-- return M
