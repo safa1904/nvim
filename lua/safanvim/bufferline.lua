@@ -60,14 +60,6 @@ function M.config()
                 },
 
 		highlights = {
-			--fill =
-                --{
-                        --fg = { attribute = "fg", highlight = "#ff0000" },
-			--bg = { attribute = "bg", highlight = "#FFFFFF" },
-               -- },
-			--buffer_selected = {
-			    --fg = { attribute = "fg", highlight = "#ff0000" },
-			--},
 			buffer_visible = {
 				fg = { attribute = "fg", highlight = "Comment", italic = false }, -- doesn't seem to work
 			},
