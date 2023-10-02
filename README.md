@@ -16,6 +16,7 @@ which key helpes you remember the keys.
 nvim tree is a file explore.
 
 To download it
+
 first download neovim in your terminal then create a folder called
 ".config" then navigate to there and type this command
 "git clone [https://github.com/safa1904/nvim.git]"
