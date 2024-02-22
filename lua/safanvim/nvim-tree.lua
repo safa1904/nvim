@@ -50,11 +50,8 @@ function M.config()
       indent_markers = {
         enable = false,
       },
-	
     },
-	
   })
-  vim.notify = require("notify")
 
 	vim.keymap.set("n", "<Leader>e", ":NvimTreeFindFileToggle<CR>")
 end

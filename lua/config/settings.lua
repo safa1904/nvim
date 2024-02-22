@@ -5,7 +5,7 @@ autocmd InsertEnter * :set relativenumber
 autocmd InsertLeave * :set norelativenumber
 augroup END
 ]])
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = "" -- Why would u set this omg, I can't see the cursor
 --vim.notify = require("notify")
 vim.opt.number = true
 
@@ -60,6 +60,7 @@ local options = {
 	backup = false, -- creates a backup file
 	clipboard = { "unnamedplus", "unnamed" }, -- allows neovim to access the system clipboard
 }
+
 
 -- Now enable the options
 for k, v in pairs(options) do
