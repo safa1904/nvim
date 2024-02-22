@@ -1,6 +1,7 @@
 local M = {
     "goolord/alpha-nvim",
-    event = 'VimEnter',
+    event = "VimEnter",
+    dependencies = { "rcarriga/nvim-notify" },
 }
 
 function M.config()
@@ -39,8 +40,6 @@ function M.config()
         }
     end
 
-
-
     -- dynamic header padding
     local fn = vim.fn
     local marginTopPercent = 0.05
@@ -52,18 +51,21 @@ function M.config()
         header_hl_group = "string"
     else
         header_hl_group = "TSLabel" -- deep blue
+        -- header_hl_group = "Error" -- RED
     end
 
     local function dynamic_header()
-        local val = {
-[[             __                 _           ]],
-[[            / _|               (_)          ]],
-[[  ___  __ _| |_ __ _ _ ____   ___ _ __ ___  ]],
-[[ / __|/ _` |  _/ _` | '_ \ \ / / | '_ ` _ \ ]],
-[[ \__ \ (_| | || (_| | | | \ V /| | | | | | |]],
-[[ |___/\__,_|_| \__,_|_| |_|\_/ |_|_| |_| |_|]]
-        }
+        local val = { --Defaults
 
+            [[  /$$$$$$             /$$$$$$         /$$              /$$   /$$                                /$$              ]],
+            [[ /$$__  $$           /$$__  $$       | $/             | $$$ | $$                               |__/              ]],
+            [[| $$  \__/  /$$$$$$ | $$  \__//$$$$$$|_//$$$$$$$      | $$$$| $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$ /$$$$$$/$$$$ ]],
+            [[|  $$$$$$  |____  $$| $$$$   |____  $$ /$$_____/      | $$ $$ $$ /$$__  $$ /$$__  $$|  $$  /$$/| $$| $$_  $$_  $$]],
+            [[ \____  $$  /$$$$$$$| $$_/    /$$$$$$$|  $$$$$$       | $$  $$$$| $$$$$$$$| $$  \ $$ \  $$/$$/ | $$| $$ \ $$ \ $$]],
+            [[ /$$  \ $$ /$$__  $$| $$     /$$__  $$ \____  $$      | $$\  $$$| $$_____/| $$  | $$  \  $$$/  | $$| $$ | $$ | $$]],
+            [[|  $$$$$$/|  $$$$$$$| $$    |  $$$$$$$ /$$$$$$$/      | $$ \  $$|  $$$$$$$|  $$$$$$/   \  $/   | $$| $$ | $$ | $$]],
+            [[ \______/  \_______/|__/     \_______/|_______/       |__/  \__/ \_______/ \______/     \_/    |__/|__/ |__/ |__/]],
+        }
 
         return val
     end
@@ -77,7 +79,6 @@ function M.config()
             hl = header_hl_group,
         },
     }
-
 
     local options = {
         header = dynamic_header_responsive,
@@ -95,18 +96,47 @@ function M.config()
             },
             opts = {
                 spacing = 1,
-                type ="text",
-                            },
+                type = "text",
+            },
         },
         footer = {
             type = "text",
-            val = require("alpha.fortune")(),
-            opts = { hl = "comment", position = "center" },
+            val =require("alpha.fortune")(),
+            opts = { position = "center" },
         },
 
         headerPaddingTop = { type = "padding", val = headerPadding },
         headerPaddingBottom = { type = "padding", val = 2 },
     }
+
+    local function getGreeting(name)
+        local tableTime = os.date("*t")
+        local hour = tableTime.hour
+        local greetingsTable = {
+            [1] = "  Sleep well",
+            [2] = "  Good morning",
+            [3] = "  Good afternoon",
+            [4] = "  Good evening",
+            [5] = "  Good night",
+        }
+        local greetingIndex = 0
+        if hour == 23 or hour < 7 then
+            greetingIndex = 1
+        elseif hour < 12 then
+            greetingIndex = 2
+        elseif hour >= 12 and hour < 18 then
+            greetingIndex = 3
+        elseif hour >= 18 and hour < 21 then
+            greetingIndex = 4
+        elseif hour >= 21 then
+            greetingIndex = 5
+        end
+        return greetingsTable[greetingIndex] .. ", " .. name
+    end
+
+    -- Make sure notifications are setup before calling them
+    require("safanvim.notifications").config()
+    require("notify")(getGreeting("Saphia"), "info", { title = "Greetings", stages = "slide", render = "minimal" })
 
     alpha.setup({
         layout = {

@@ -10,7 +10,7 @@ function M.config()
 
     local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
     if not status_ok then
-        vim.notify("colorscheme " .. colorscheme .. " not found!")
+        -- vim.notify("colorscheme " .. colorscheme .. " not found!")
         return
     end
 
@@ -23,9 +23,8 @@ function M.config()
     end
 
     ColorMyPencils()
-       for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-  vim.api.nvim_set_hl(0, group, {})
-end
+    for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        vim.api.nvim_set_hl(0, group, {})
     end
-
+end
 return M

@@ -5,7 +5,7 @@ require("lazy_bootstrap") -- bootstraps folke/lazy
 
 ----------------------------------------------[[  User Settings ]]
 
-require("config") -- loads lua/user/init.lua
+require("config")
 
 ----------------------------------------------[[  Load Plugins  ]]
 
