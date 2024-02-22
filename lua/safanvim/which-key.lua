@@ -83,13 +83,7 @@ function M.config()
 			"<cmd> lua require('silicon').visualise_api({show_buf = false, to_clip = true})<cr>",
 			"Screenshot V-Selection",
 		},
-		-- S = { "<cmd> lua require('silicon').visualise(true,true)<cr>", "Screenshot Entire Buffer" },
-		-- a = {
-		--     name = "Align",
-		--     c = {"<cmd>lua require(plugin_config.functions).align_by_char()<CR>", "Align by Char" },
-		-- -- q = { '<cmd>lua require("plugin_config.functions").smart_quit()<CR>', "Quit" },
-		-- },
-	}
+			}
 
 	local mappings = {
 
@@ -103,7 +97,6 @@ function M.config()
 		N = { "<cmd>lua require('telescope').extensions.notify.notify()<cr>", "Notifications" },
 		R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		w = { "<cmd>w<CR>", "Write" },
-		-- h = { "<cmd>nohlsearch<CR>", "No HL" },
 		q = { '<cmd>lua require("utils.functions").smart_quit()<CR>', "Quit" },
 		["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
 		v = { "<cmd>vsplit<cr>", "vsplit" },
@@ -113,7 +106,6 @@ function M.config()
                 {
 			name = "Buffers",
 
-			-- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
                         a = { "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>", "Close All Other Buffers" },
 			D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory", },
 			L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language", },
@@ -140,13 +132,6 @@ function M.config()
                     S = { "<cmd>Lazy profile<cr>", "Status" },
                     u = { "<cmd>Lazy update<cr>", "Update" },
                 },
-		-- 	name = "Packer",
-		-- 	c = { "<cmd>PackerCompile<cr>", "Compile" },
-		-- 	i = { "<cmd>PackerInstall<cr>", "Install" },
-		-- 	s = { "<cmd>PackerSync<cr>", "Sync" },
-		-- 	S = { "<cmd>PackerStatus<cr>", "Status" },
-		-- 	u = { "<cmd>PackerUpdate<cr>", "Update" },
-		-- },
 		o = {
 			name = "Options",
 			c = { "<cmd>lua vim.g.cmp_active=false<cr>", "Completion off" },
@@ -170,7 +155,6 @@ function M.config()
 		f = {
 			name = "Find",
 			b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-			-- b = { "<cmd>lua require(\"telescope.builtin\").buffers()<cr>", "Find Buffers" },
 			B = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 			c = { "<cmd>Telescope commands<cr>", "Commands" },
 			C = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
@@ -183,7 +167,6 @@ function M.config()
 			r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
 
 			R = { ":cd ~/Repos<CR> :Telescope find_files <CR>", "Search Repo Files" },
-			s = { "<cmd>SearchSession<cr>", "Find Session" },
 			S = {
 				"<cmd>execute 'cd ' . fnamemodify(expand('$MYVIMRC'), ':p:h')<CR> :Telescope live_grep <CR>",
 				"Search Settings",
@@ -194,15 +177,6 @@ function M.config()
 			w = { "<cmd>Telescope grep_string<cr>", "Find Word" },
 			v = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
 		},
-		s = {
-			name = "Session",
-			s = { "<cmd>SaveSession<cr>", "Save" },
-			l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
-			r = { "<cmd>Autosession search<cr>", "Load Last Dir" },
-			d = { "<cmd>Autosession delete<cr>", "Delete Session" },
-			f = { "<cmd>SearchSession<cr>", "Find Session" },
-		},
-
 		d = {
 			name = "Debug",
 			b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
@@ -219,11 +193,9 @@ function M.config()
 
 		g = {
 			name = "Git",
-			--[[ g = { "<cmd>lua _GITUI_TOGGLE()<CR>", "GitUI" }, ]]
 			l = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "LazyGit" },
 			j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-			--[[ l = { "<cmd>GitBlameToggle<cr>", "Blame" }, ]]
 			p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 			r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 			R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -287,21 +259,12 @@ function M.config()
 		},
 
 		r = {
-			-- name = "Session",
-			-- s = { "<cmd>SaveSession<cr>", "Save" },
-			-- l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
-			-- d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
-			-- f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
-			name = "Quickrun",
+			name = "Code Run",
 			r = { "<cmd>RunCode<cr>", "Run File" },
 			f = { '<cmd>RunCode "float" float<cr>', "Run (Floating Window)" },
 			t = { '<cmd>RunCode "toggleterm"<cr>', "Run (Terminal)" },
 			q = { '<cmd>RunCode "toggle"quickfiwx<cr>', "Run (Quickfix)" },
-			-- m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
-			-- r = { "<cmd>SnipReset<cr>", "Reset" },
-			-- t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
-			-- x = { "<cmd>SnipTerminate<cr>", "Terminate" },
-		},
+		    },
 
 		t = {
 			name = "Terminal",
@@ -315,7 +278,6 @@ function M.config()
 			p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 			s = { "<cmd>lua _SPT_TOGGLE()<cr>", "Spotify-TUI" },
 			f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-			--h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 			h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 			v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		},
@@ -375,6 +337,5 @@ function M.config()
 	which_key.setup(setup)
 	which_key.register(mappings, opts)
 	which_key.register(xmappings, xopts)
-	--which_key.register(m_mappings, m_opts)
 end
 return M

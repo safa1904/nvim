@@ -1,6 +1,5 @@
 local M = {
 	"akinsho/bufferline.nvim",
-        commit = "eb4e95b", -- this prevents updating
 	enabled = true,
 	event = "BufAdd",
 	-- Keeps buffers and tabs scoped/separate
@@ -50,7 +49,6 @@ function M.config()
 	               -- end
                        -- },
 			show_buffer_close_icons = true,
-			show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
 			show_close_icon = false,
 			show_tab_indicators = true,
 
@@ -60,14 +58,6 @@ function M.config()
                 },
 
 		highlights = {
-			--fill =
-                --{
-                        --fg = { attribute = "fg", highlight = "#ff0000" },
-			--bg = { attribute = "bg", highlight = "#FFFFFF" },
-               -- },
-			--buffer_selected = {
-			    --fg = { attribute = "fg", highlight = "#ff0000" },
-			--},
 			buffer_visible = {
 				fg = { attribute = "fg", highlight = "Comment", italic = false }, -- doesn't seem to work
 			},

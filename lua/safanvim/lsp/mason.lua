@@ -3,7 +3,6 @@ M.tools = {
     "black",
     "clang-format",
     "codelldb",
-    "pyright",
     "debugpy",
     "eslint_d",
     "flake8",
@@ -14,7 +13,7 @@ M.tools = {
     "selene",
     "shellcheck",
     "shfmt",
-    "stylua"
+    "stylua",
 }
 
 function M.check()
@@ -43,7 +42,6 @@ function M.config()
 
     require("mason-lspconfig").setup({
         ensure_installed = {
-            "awk_ls",
             "bashls",
             "clangd",
             "html",
@@ -53,7 +51,6 @@ function M.config()
             "rust_analyzer",
             "lua_ls",
             "tsserver",
-            "pyright",
             "yamlls",
         },
         automatic_installation = true,
@@ -65,6 +62,11 @@ function M.config()
         -- a dedicated handler.
         function(server_name) -- default handler (optional)
             require("lspconfig")[server_name].setup(opts)
+        end,
+
+        ["jdtls"] = function()
+        --     local java_opts = require("fenvim.lsp.settings.java")
+        --     require("jdtls").start_or_attach(java_opts)
         end,
 
         ["rust_analyzer"] = function()

@@ -1,6 +1,7 @@
 local M = {
     "goolord/alpha-nvim",
-    event = 'VimEnter',
+    event = "VimEnter",
+    dependencies = { "rcarriga/nvim-notify" },
 }
 
 function M.config()
@@ -39,8 +40,6 @@ function M.config()
         }
     end
 
-
-
     -- dynamic header padding
     local fn = vim.fn
     local marginTopPercent = 0.05
@@ -68,8 +67,6 @@ function M.config()
             [[ \______/  \_______/|__/     \_______/|_______/       |__/  \__/ \_______/ \______/     \_/    |__/|__/ |__/ |__/]],
         }
 
-
-
         return val
     end
     require("alpha.term")
@@ -82,7 +79,6 @@ function M.config()
             hl = header_hl_group,
         },
     }
-
 
     local options = {
         header = dynamic_header_responsive,
@@ -100,14 +96,13 @@ function M.config()
             },
             opts = {
                 spacing = 1,
-                type ="text",
-                            },
+                type = "text",
+            },
         },
         footer = {
             type = "text",
-            --val = "Do NOT UPDATE"..require("alpha.fortune")(),
-           val = "DO NOT UPDATE",
-           opts = { hl = "error", position = "center" },
+            val =require("alpha.fortune")(),
+            opts = { position = "center" },
         },
 
         headerPaddingTop = { type = "padding", val = headerPadding },
@@ -122,7 +117,7 @@ function M.config()
             [2] = "  Good morning",
             [3] = "  Good afternoon",
             [4] = "  Good evening",
-            [5] = "望 Good night",
+            [5] = "  Good night",
         }
         local greetingIndex = 0
         if hour == 23 or hour < 7 then
@@ -138,8 +133,10 @@ function M.config()
         end
         return greetingsTable[greetingIndex] .. ", " .. name
     end
-   vim.notify = require("notify")(getGreeting("Saphia"), "info",
-           {title = "Greetings", stages = "slide", render = "minimal"})
+
+    -- Make sure notifications are setup before calling them
+    require("safanvim.notifications").config()
+    require("notify")(getGreeting("Saphia"), "info", { title = "Greetings", stages = "slide", render = "minimal" })
 
     alpha.setup({
         layout = {
