@@ -2,7 +2,6 @@
 <img width="1800" alt="image" src="https://github.com/safa1904/nvim/assets/100108435/e2b4676d-f812-4eed-976a-b2685add3e98">
 
 [![safa1904](https://custom-icon-badges.demolab.com/badge/made%20by%20-safa1904-556bf2?logo=github&logoColor=white&labelColor=101827)](https://github.com/safa1904)
-[![License](https://img.shields.io/github/license/safa1904/nvim?color=dddddd&labelColor=000000)](https://github.com/safa1904/nvim/blob/master/LICENSE)
 [![Top Language](https://img.shields.io/github/languages/top/safa1904/nvim?logo=github&logoColor=%23007ACC&label=lua)](https://www.lualang.org/)
 [![Contributors](https://img.shields.io/github/contributors/safa1904/nvim?style=flat&color=orange&label=Contributors)](https://github.com/safa1904/nvim/graphs/contributors)
 
