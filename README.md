@@ -11,7 +11,7 @@
 **safanvim** is a well-designed and fully functional IDE that is built with
 Lua. This setup is tailored to suit my workflow and preferences. Feel free to explore and use any parts of it that you find interesting.
 
-## Installation
+## 🔧Installation
 
 1. Clone this repository to your local machine:
 
@@ -22,7 +22,7 @@ Lua. This setup is tailored to suit my workflow and preferences. Feel free to ex
 
 3. Restart Neovim.
 
-## Key Features
+## 📋 Key Features
 - brightens your login with a friendly welcome.
 - elevates your experience with a welcoming dashboard, presenting a variety of options such as creating
   a new file or quickly accessing recent documents, providing
@@ -43,7 +43,7 @@ Lua. This setup is tailored to suit my workflow and preferences. Feel free to ex
 
 
 
-### Custom Key Bindings
+### 🎨 Custom Key Bindings
 
 I have customized key bindings to streamline my workflow. Some notable ones include:
 
@@ -51,16 +51,16 @@ I have customized key bindings to streamline my workflow. Some notable ones incl
 - `<leader> + q` - Quit Neovim.
 You can find the complete list of key bindings in the [keymapping.lua](lua/config/keymappings.lua) file.
 
-## Additional Notes
+## ➕ Additional Notes
 
 - This configuration assumes you have Neovim 0.5 or later installed.
 
 - Feel free to customize this configuration to fit your own preferences. The goal is to create a setup that works best for you.
 
-## Issues and Contributions
+## 👩‍🔧 Issues and Contributions
 
 If you encounter any issues or have suggestions for improvements, please open an issue or create a pull request. Your feedback is highly appreciated!
 
-## Acknowledgements
+## 💎Acknowledgements
 - [chris@machine](https://github.com/ChristianChiarulli)
 - [DFendar](https://github.com/dfendr)
