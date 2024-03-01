@@ -43,7 +43,7 @@ Lua. This setup is tailored to suit my workflow and preferences. Feel free to ex
 
 
 
-### 🎨 Custom Key Bindings
+## 🎨 Custom Key Bindings
 
 I have customized key bindings to streamline my workflow. Some notable ones include:
 
