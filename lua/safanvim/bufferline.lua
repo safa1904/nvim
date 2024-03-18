@@ -1,6 +1,5 @@
 local M = {
 	"akinsho/bufferline.nvim",
-        commit = "eb4e95b", -- this prevents updating
 	enabled = true,
 	event = "BufAdd",
 	-- Keeps buffers and tabs scoped/separate
@@ -50,7 +49,6 @@ function M.config()
 	               -- end
                        -- },
 			show_buffer_close_icons = true,
-			show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
 			show_close_icon = false,
 			show_tab_indicators = true,
 

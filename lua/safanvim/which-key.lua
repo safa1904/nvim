@@ -167,7 +167,6 @@ function M.config()
 			r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
 
 			R = { ":cd ~/Repos<CR> :Telescope find_files <CR>", "Search Repo Files" },
-			s = { "<cmd>SearchSession<cr>", "Find Session" },
 			S = {
 				"<cmd>execute 'cd ' . fnamemodify(expand('$MYVIMRC'), ':p:h')<CR> :Telescope live_grep <CR>",
 				"Search Settings",
@@ -178,15 +177,6 @@ function M.config()
 			w = { "<cmd>Telescope grep_string<cr>", "Find Word" },
 			v = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
 		},
-		s = {
-			name = "Session",
-			s = { "<cmd>SaveSession<cr>", "Save" },
-			l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
-			r = { "<cmd>Autosession search<cr>", "Load Last Dir" },
-			d = { "<cmd>Autosession delete<cr>", "Delete Session" },
-			f = { "<cmd>SearchSession<cr>", "Find Session" },
-		},
-
 		d = {
 			name = "Debug",
 			b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
