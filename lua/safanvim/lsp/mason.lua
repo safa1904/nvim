@@ -47,12 +47,8 @@ function M.config()
             "html",
             "jsonls",
             "marksman",
-            "omnisharp",
-            "rust_analyzer",
             "lua_ls",
-            "tsserver",
-            "yamlls",
-        },
+            "tsserver"},
         automatic_installation = true,
     })
 
@@ -65,15 +61,9 @@ function M.config()
         end,
 
         ["jdtls"] = function()
-        --     local java_opts = require("fenvim.lsp.settings.java")
-        --     require("jdtls").start_or_attach(java_opts)
         end,
 
-        ["rust_analyzer"] = function()
-            local rust_opts = require("safanvim.lsp.settings.rust")
-            require("rust-tools").setup(rust_opts)
-        end,
-
+        
         ["tsserver"] = function()
             local tsserver_opts = require("safanvim.lsp.settings.tsserver")
             local extra_opts =
@@ -94,11 +84,6 @@ function M.config()
             require("lspconfig").jsonls.setup(jsonls_opts_ext)
         end,
 
-        ["omnisharp"] = function()
-            local omnisharp_opts = require("safanvim.lsp.settings.omnisharp")
-            local omnisharp_opts_ext = vim.tbl_deep_extend("force", omnisharp_opts, opts)
-            require("lspconfig").omnisharp.setup(omnisharp_opts_ext)
-        end,
         ["lua_ls"] = function()
             local lua_ls_opts = require("safanvim.lsp.settings.lua_ls")
             local lua_ls_opts_ext = vim.tbl_deep_extend("force", lua_ls_opts, opts)
@@ -111,12 +96,7 @@ function M.config()
             require("lspconfig").bashls.setup(bash_opts_ext)
         end,
 
-        ["perlnavigator"] = function()
-            local perlnavigator_opts = require("safanvim.lsp.settings.perl")
-            local perlnavigator_opts_ext = vim.tbl_deep_extend("force", perlnavigator_opts, opts)
-            require("lspconfig").perlnavigator.setup(perlnavigator_opts_ext)
-        end,
-
+        
         ["pyright"] = function()
             local pyright_opts = require("safanvim.lsp.settings.pyright")
             local pyright_opts_ext = vim.tbl_deep_extend("force", pyright_opts, opts)

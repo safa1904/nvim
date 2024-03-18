@@ -5,9 +5,8 @@ autocmd InsertEnter * :set relativenumber
 autocmd InsertLeave * :set norelativenumber
 augroup END
 ]])
--- vim.opt.guicursor = "" -- Why would u set this omg, I can't see the cursor
+vim.opt.guicursor = ""
 vim.opt.number = true
-
 vim.opt.autoread = true -- automatically update files if updated elsewhere.
 vim.opt.autochdir = false -- automatically change nvim path to current buffer
 vim.opt.backup = false -- creates a backup file
