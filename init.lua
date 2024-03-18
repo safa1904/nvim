@@ -15,5 +15,6 @@ require("lazy").setup("safanvim", {
 	diff = { cmd = "diffview.nvim" },
 	ui = { border = "rounded" },
 
+
 	change_detection = { enabled = false },
 })
