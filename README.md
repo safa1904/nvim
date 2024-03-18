@@ -62,6 +62,7 @@ You can find the complete list of key bindings in the [keymapping.lua](lua/confi
 ## 👩‍🔧 Issues and Contributions
 
 If you encounter any issues or have suggestions for improvements, please open an issue or create a pull request. Your feedback is highly appreciated!
+
 ## 💎Acknowledgements
 - [D.Fender](https://github.com/dfendr)
 - [chris@machine](https://github.com/ChristianChiarulli)
